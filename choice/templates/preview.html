@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Your Data - LJ University</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h3 class="text-center">Preview Your Data</h3>
+    <form method="post">
+        {% csrf_token %}
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <td>{{ form_data.name }}</td>
+            </tr>
+            <tr>
+                <th>Enrollment No</th>
+                <td>{{ form_data.enrollment_no }}</td>
+            </tr>
+            <tr>
+                <th>Branch</th>
+                <td>{{ form_data.branch }}</td>
+            </tr>
+            <tr>
+                <th>Contact No</th>
+                <td>{{ form_data.contact_no }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ form_data.email }}</td>
+            </tr>
+            <tr>
+                <th>Choices</th>
+                <td>{{ form_data.choices }}</td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-success">Confirm Submission</button>
+        <a href="{% url 'CompExamChoice' %}" class="btn btn-warning">Go Back to Edit</a>
+    </form>
+</div>
+</body>
+</html>

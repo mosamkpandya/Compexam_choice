@@ -1,0 +1,37 @@
+# Python bytecode files
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+
+# If using macOS:
+.DS_Store
+
+# Virtual environment
+venv/
+env/
+ENV/
+.env
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Static and media files
+static/
+media/

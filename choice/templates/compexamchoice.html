@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Data - LJ University</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 form-container">
+             <img src="{% static 'logo_LJU.png' %}" alt="LJ University Logo" class="logo">
+            <h3 class="text-center">Submit Your Data</h3>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.name.label_tag }} {{ form.name }}
+                </div>
+                <div class="form-group">
+                    {{ form.enrollment_no.label_tag }} {{ form.enrollment_no }}
+                </div>
+                <div class="form-group">
+                    {{ form.branch.label_tag }} {{ form.branch }}
+                </div>
+                <div class="form-group">
+                    {{ form.contact_no.label_tag }}
+                    {{ form.contact_no }}
+                    <small class="form-text text-muted">Enter a 10-digit phone number.</small>
+                </div>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    <small class="form-text text-muted">Email must end with 'ljku.edu.in' or 'mail.ljku.edu.in'.</small>
+                </div>
+                <div class="form-group">
+                    {{ form.choices.label_tag }} {{ form.choices }}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
